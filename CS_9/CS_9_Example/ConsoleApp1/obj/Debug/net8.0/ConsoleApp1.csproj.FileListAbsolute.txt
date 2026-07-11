@@ -1,0 +1,14 @@
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.exe
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.deps.json
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.runtimeconfig.json
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.dll
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.pdb
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfoInputs.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfo.cs
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.dll
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\refint\ConsoleApp1.dll
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.pdb
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.genruntimeconfig.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ref\ConsoleApp1.dll

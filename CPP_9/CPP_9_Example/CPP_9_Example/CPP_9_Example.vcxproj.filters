@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Lesson">
+      <UniqueIdentifier>{b86e2c56-0477-4434-a5a4-b77419101396}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\01. 신규 프로젝트 생성 + 프로그래밍 입문">
+      <UniqueIdentifier>{221a4c2b-700d-4837-a0d5-dc19410136f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\02. 자료형 - 변수 + 난수 %28C++11↓%29">
+      <UniqueIdentifier>{bbdb3c9b-1470-4b89-ab0e-cc965078f24f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\03. 연산자 + 반복문">
+      <UniqueIdentifier>{0a3006f7-6b18-41ea-93e4-747aab61d2e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\04. 조건문 + 업다운">
+      <UniqueIdentifier>{9e7de26a-27cc-491a-b3cc-0eb476b34ce8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lesson\05. 함수">
+      <UniqueIdentifier>{988f96ed-b9a6-4044-a205-e3781bb15af6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Example_01.cpp">
+      <Filter>Lesson\01. 신규 프로젝트 생성 + 프로그래밍 입문</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_02.cpp">
+      <Filter>Lesson\02. 자료형 - 변수 + 난수 %28C++11↓%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_03.cpp">
+      <Filter>Lesson\03. 연산자 + 반복문</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_04.cpp">
+      <Filter>Lesson\04. 조건문 + 업다운</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_05.cpp">
+      <Filter>Lesson\04. 조건문 + 업다운</Filter>
+    </ClCompile>
+    <ClCompile Include="Example_06.cpp">
+      <Filter>Lesson\05. 함수</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+﻿  Test1.cpp
+C:\CPP_9\day5\Challenge1_day5\Challenge1_day5\Test1.cpp(6,6): warning C4326: 'main'의 반환 형식이 'int'이어야 하는데 'void'입니다.
+  Challenge1_day5.vcxproj -> C:\CPP_9\day5\Challenge1_day5\x64\Debug\Challenge1_day5.exe

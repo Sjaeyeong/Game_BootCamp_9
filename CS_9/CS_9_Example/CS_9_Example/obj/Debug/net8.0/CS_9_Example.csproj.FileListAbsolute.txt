@@ -1,0 +1,14 @@
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\bin\Debug\net8.0\CS_9_Example.exe
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\bin\Debug\net8.0\CS_9_Example.deps.json
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\bin\Debug\net8.0\CS_9_Example.runtimeconfig.json
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\bin\Debug\net8.0\CS_9_Example.dll
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\bin\Debug\net8.0\CS_9_Example.pdb
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\obj\Debug\net8.0\CS_9_Example.GeneratedMSBuildEditorConfig.editorconfig
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\obj\Debug\net8.0\CS_9_Example.AssemblyInfoInputs.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\obj\Debug\net8.0\CS_9_Example.AssemblyInfo.cs
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\obj\Debug\net8.0\CS_9_Example.csproj.CoreCompileInputs.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\obj\Debug\net8.0\CS_9_Example.dll
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\obj\Debug\net8.0\refint\CS_9_Example.dll
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\obj\Debug\net8.0\CS_9_Example.pdb
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\obj\Debug\net8.0\CS_9_Example.genruntimeconfig.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example\obj\Debug\net8.0\ref\CS_9_Example.dll

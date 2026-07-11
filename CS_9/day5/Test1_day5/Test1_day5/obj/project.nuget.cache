@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "umkedVxTn5Y=",
+  "success": true,
+  "projectFilePath": "C:\\Game_BootCamp_9\\CS_9\\day5\\Test1_day5\\Test1_day5\\Test1_day5.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\석재영\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\석재영\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\석재영\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\석재영\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.22\\microsoft.netcore.app.host.win-x64.8.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}
