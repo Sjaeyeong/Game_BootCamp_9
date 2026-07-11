@@ -12,3 +12,4 @@ C:\Game_BootCamp_9\CS_9\day5\Test1_day5\Test1_day5\obj\Debug\net8.0\refint\Test1
 C:\Game_BootCamp_9\CS_9\day5\Test1_day5\Test1_day5\obj\Debug\net8.0\Test1_day5.pdb
 C:\Game_BootCamp_9\CS_9\day5\Test1_day5\Test1_day5\obj\Debug\net8.0\Test1_day5.genruntimeconfig.cache
 C:\Game_BootCamp_9\CS_9\day5\Test1_day5\Test1_day5\obj\Debug\net8.0\ref\Test1_day5.dll
+C:\Game_BootCamp_9\CS_9\day5\Test1_day5\Test1_day5\obj\Debug\net8.0\Test1_day5.sourcelink.json

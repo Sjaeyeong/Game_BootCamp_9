@@ -1,5 +1,6 @@
 ﻿using System.Collections.Specialized;
 using System.Drawing;
+using System.Security.Cryptography;
 
 namespace Test1_day5
 {
@@ -10,26 +11,33 @@ namespace Test1_day5
         {
             string[] powerUp = { "ATK", "DEF", "H P", "A S", "SPD" }; // ATK : 공격력, DEF : 방어력, HP : 체력, AS : 공격속도, SPD : 이동속도
 
+            int count = 0;
 
-            while (true)
+            while (count < 5) // 임시로 5회만 돌아가게 설정했음
             {
-                
 
                 Console.Write("임시 레벨업(치트) 아무키나 눌러주세요!");
                 Console.ReadKey();
                 Console.Clear();
 
-                Console.WriteLine("레벨업을 하였습니다. 강화를 선택해주세요!");
-
+                ConsoleLine();
+                Console.WriteLine($"[{count + 1} / 5 회차]레벨업을 하였습니다. 강화를 선택해주세요! (넘패드 1 ~ 3번을 눌러주세요)");
+                ConsoleLine();
                 SelectEffect(powerUp);
 
                 Console.WriteLine();
-                
+
+                Thread.Sleep(1000); // 그냥 이렇게 하니 딜레이 중에 숫자를 계속 누르면 선입력? 되는 현상이 발생했음!!
+                Console.Clear();
+
+                count++;
 
             }
-            
 
-            
+            ConsoleLine();
+            Console.WriteLine("5회의 임시 레벨업 및 강화를 마쳤습니다. 프로그램 종료.".PadLeft(45));
+            ConsoleLine();
+
         }
 
         static void SelectEffect(string[] powerUp)
@@ -48,67 +56,74 @@ namespace Test1_day5
             string[] box2 = SelectBox(power2, stat2);
             string[] box3 = SelectBox(power3, stat3);
 
-            ConsoleColor color1 = GetStatColor(stat1);
-            ConsoleColor color2 = GetStatColor(stat2);
-            ConsoleColor color3 = GetStatColor(stat3);
+            ConsoleColor color1 = GetStatColor(power1);
+            ConsoleColor color2 = GetStatColor(power2);
+            ConsoleColor color3 = GetStatColor(power3);
 
-            for (int i = 0; i < 12; i++)
+            BoxColor(box1, box2, box3, color1, color2, color3);
+
+            while (true)
             {
-                PrintTextColor(box1[i], color1);
-                Console.Write("   ");
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true); // ReadKey()안에 true를 넣으면 콘솔창에 넘패드를 누른 숫자가 나타나지 않는다고 함!
 
-                PrintTextColor(box2[i], color2);
-                Console.Write("   ");
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.NumPad1:
+                        Console.Clear();
+                        ConsoleLine();
+                        Console.WriteLine("1번을 선택했습니다!".PadLeft(45));
+                        ConsoleLine();
+                        BoxColor(box1, box2, box3, color1, GetStatColor(""), GetStatColor(""));
+                        break;
+                    case ConsoleKey.NumPad2:
+                        Console.Clear();
+                        ConsoleLine();
+                        Console.WriteLine("2번을 선택했습니다!".PadLeft(45));
+                        ConsoleLine();
+                        BoxColor(box1, box2, box3, GetStatColor(""), color2, GetStatColor(""));
+                        break;
+                    case ConsoleKey.NumPad3:
+                        Console.Clear();
+                        ConsoleLine();
+                        Console.WriteLine("3번을 선택했습니다!".PadLeft(45));
+                        ConsoleLine();
+                        BoxColor(box1, box2, box3, GetStatColor(""), GetStatColor(""), color3);
+                        break;
+                    default:
+                        continue;
+                }
 
-                PrintTextColor(box3[i], color3);
-
-                Console.WriteLine();
+                break;
             }
 
+        }
 
-
+        static void ConsoleLine()
+        {
+            Console.WriteLine("=====================================================================================");
         }
 
         static string[] SelectBox(string statName, string statValue)
         {
             string[] lines = new string[12];
 
-            string paddedName = statName.PadLeft(8).PadRight(15); 
-            string paddedValue = $"+{statValue}".PadLeft(9).PadRight(15);
+            string paddedName = statName.PadLeft(8).PadRight(12); // 모든 statName을 3글자로 맞춰서 PadLeft(8)을 하면 좌측 공백 5개, PadRight(12)를 하면 statName.PadLeft(8)이 8칸이므로 오른쪽 공백이 4개, lines[4]번 {paddedName} 좌공백 3, 우공백 5 이므로 네모 박스 중앙에 위치함!!
+            string paddedValue = $"+ {statValue}".PadLeft(8).PadRight(13); // 위에 설정처럼 중앙에 맞추도록 수치 설정! 
 
-            lines[0] = "┌───────────────────┐";
-            lines[1] = "│                   │";
-            lines[2] = "│                   │";
-            lines[3] = "│                   │";
-            lines[4] = $"│   {paddedName} │";
-            lines[5] = "│                   │";
-            lines[6] = "│                   │";
-            lines[7] = $"│  {paddedValue}  │";
-            lines[8] = "│                   │";
-            lines[9] = "│                   │";
+            lines[0] =  "┌───────────────────┐"; // 21칸
+            lines[1] =  "│                   │";
+            lines[2] =  "│                   │";
+            lines[3] =  "│                   │";
+            lines[4] = $"│   {paddedName}    │";
+            lines[5] =  "│                   │";
+            lines[6] =  "│                   │";
+            lines[7] = $"│   {paddedValue}   │";
+            lines[8] =  "│                   │";
+            lines[9] =  "│                   │";
             lines[10] = "│                   │";
             lines[11] = "└───────────────────┘";
 
             return lines;
-        }
-
-        static ConsoleColor GetStatColor(string statName)
-        {
-            switch (statName)
-            {
-                case "ATK":
-                    return ConsoleColor.Red;
-                case "DEF":
-                    return ConsoleColor.Cyan;
-                case "H P":
-                    return ConsoleColor.Green;
-                case "A S":
-                    return ConsoleColor.Yellow;
-                case "SPD":
-                    return ConsoleColor.Magenta;
-                default:
-                    return ConsoleColor.White;
-            }
         }
 
         /* 기존에 이 방식을 사용하려고 헀지만, 따로 활용할 방법이 제한적이고 가시성이 떨어져 보여서 위의 방식을 채택함
@@ -130,25 +145,22 @@ namespace Test1_day5
         }
         */
 
-        static void RandomConsole(string[] powerUp, int selectRandom)
+        static ConsoleColor GetStatColor(string statName)
         {
-            switch (selectRandom)
+            switch (statName)
             {
-                case 0:
-                    Console.Write(powerUp[selectRandom]);
-                    break;
-                case 1:
-                    Console.Write(powerUp[selectRandom]);
-                    break;
-                case 2:
-                    Console.Write(powerUp[selectRandom]);
-                    break;
-                case 3:
-                    Console.Write(powerUp[selectRandom]);
-                    break;
-                case 4:
-                    Console.Write(powerUp[selectRandom]);
-                    break;
+                case "ATK":
+                    return ConsoleColor.DarkRed;
+                case "DEF":
+                    return ConsoleColor.DarkGreen;
+                case "H P":
+                    return ConsoleColor.Red;
+                case "A S":
+                    return ConsoleColor.Yellow;
+                case "SPD":
+                    return ConsoleColor.Cyan;
+                default:
+                    return ConsoleColor.White;
             }
         }
 
@@ -172,23 +184,32 @@ namespace Test1_day5
             }
         }
 
-        static void PrintTextColor(string text, ConsoleColor fontColor) // 텍스트 색상 적용
+        static void PrintTextColor(string text, ConsoleColor fontColor)
         {
-            // 기존 색상 저장
             ConsoleColor oldFont = Console.ForegroundColor;
-            // ConsoleColor oldBackGround = Console.BackgroundColor;
 
-            // 새 색상 적용
             Console.ForegroundColor = fontColor;
-            // Console.BackgroundColor = backgroundColor;
 
-            // 출력
             Console.Write(text);
 
-            // 색상 복원
             Console.ForegroundColor = oldFont;
-            // Console.BackgroundColor = oldBackGround;
 
+        }
+
+        static void BoxColor(string[] box1, string[] box2, string[] box3, ConsoleColor color1, ConsoleColor color2, ConsoleColor color3)
+        {
+            for (int i = 0; i < 12; i++)
+            {
+                PrintTextColor(box1[i], color1);
+                Console.Write("   ");
+
+                PrintTextColor(box2[i], color2);
+                Console.Write("   ");
+
+                PrintTextColor(box3[i], color3);
+
+                Console.WriteLine();
+            }
         }
     }
 }
