@@ -12,3 +12,4 @@ C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\refint\Console
 C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.pdb
 C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.genruntimeconfig.cache
 C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ref\ConsoleApp1.dll
+C:\Game_BootCamp_9\CS_9\CS_9_Example\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.sourcelink.json

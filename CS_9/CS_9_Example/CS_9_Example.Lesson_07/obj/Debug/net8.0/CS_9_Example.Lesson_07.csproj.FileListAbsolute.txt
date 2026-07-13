@@ -1,0 +1,15 @@
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\bin\Debug\net8.0\CS_9_Example.Lesson_07.exe
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\bin\Debug\net8.0\CS_9_Example.Lesson_07.deps.json
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\bin\Debug\net8.0\CS_9_Example.Lesson_07.runtimeconfig.json
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\bin\Debug\net8.0\CS_9_Example.Lesson_07.dll
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\bin\Debug\net8.0\CS_9_Example.Lesson_07.pdb
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\obj\Debug\net8.0\CS_9_Example.Lesson_07.GeneratedMSBuildEditorConfig.editorconfig
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\obj\Debug\net8.0\CS_9_Example.Lesson_07.AssemblyInfoInputs.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\obj\Debug\net8.0\CS_9_Example.Lesson_07.AssemblyInfo.cs
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\obj\Debug\net8.0\CS_9_Example.Lesson_07.csproj.CoreCompileInputs.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\obj\Debug\net8.0\CS_9_Example.Lesson_07.sourcelink.json
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\obj\Debug\net8.0\CS_9_Example.Lesson_07.dll
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\obj\Debug\net8.0\refint\CS_9_Example.Lesson_07.dll
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\obj\Debug\net8.0\CS_9_Example.Lesson_07.pdb
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\obj\Debug\net8.0\CS_9_Example.Lesson_07.genruntimeconfig.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson_07\obj\Debug\net8.0\ref\CS_9_Example.Lesson_07.dll
