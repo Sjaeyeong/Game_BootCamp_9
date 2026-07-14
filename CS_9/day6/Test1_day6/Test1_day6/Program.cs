@@ -31,8 +31,13 @@ namespace Test1_day6
             Console.WriteLine();
 
             PrintLine();
-            Console.WriteLine("E. 맛보기 도전 → 부분 문자열 직접 찾기\n");
+            Console.WriteLine("F. 맛보기 도전 → 부분 문자열 직접 찾기\n");
             Test_6();
+            Console.WriteLine();
+
+            PrintLine();
+            Console.WriteLine("G. 가상의 주민번호를 입력받아 '-' 를 제거한 결과를 출력한다.\n");
+            Test_7();
             Console.WriteLine();
 
 
@@ -62,12 +67,12 @@ namespace Test1_day6
 
             for (int i = 0; i < charA.Length / 2; i++)
             {   // 튜플 스왑 활용
-                (charA[i], charA[charA.Length - 1 - i]) = (charA[charA.Length - 1 - i], charA[i]); 
+                (charA[i], charA[charA.Length - 1 - i]) = (charA[charA.Length - 1 - i], charA[i]);
             }
 
-            for (int i = 1; i <charB.Length / 2; i += 2)
+            for (int i = 1; i < charB.Length / 2; i += 2)
             {   // 배열인덱스 1번 (짝수인 2번째부터)과 배열의 짝수번쨰의 끝이랑 튜플 스왑 - 짝수번째인덱스를 뒤에서 부터 구하는 식 =charB.Length - i - charB.Length%2 --- 짝수일 경우 0을 빼고 홀수일 경우 1을 빼주기
-                (charB[i], charB[charB.Length - i - charB.Length%2]) = (charB[charB.Length - i - charB.Length % 2], charB[i]);
+                (charB[i], charB[charB.Length - i - charB.Length % 2]) = (charB[charB.Length - i - charB.Length % 2], charB[i]);
             }
 
             Console.WriteLine();
@@ -98,10 +103,10 @@ namespace Test1_day6
                     continue;
                 }
                 c = cInput[0];
-                break;   
+                break;
             }
 
-            for (int i = 0;  i < charC.Length; i++)
+            for (int i = 0; i < charC.Length; i++)
             {
                 if (charC[i] == c) num += 1;
             }
@@ -206,6 +211,25 @@ namespace Test1_day6
 
         }
 
+        static void Test_7()
+        {
+            Console.Write("주민번호를 입력해주세요. (Ex: 123456-1234567) : ");
+            string inputG = Console.ReadLine()!;
+            char[] charG = inputG.ToCharArray();
 
+            string result = "";
+
+            for (int i = 0; i < charG.Length; i++)
+            {
+                if (charG[i] != '-')
+                {
+                    result += charG[i];
+                }
+            }
+
+            Console.WriteLine($"출력 : {result}");
+
+        }
+            
     }
 }

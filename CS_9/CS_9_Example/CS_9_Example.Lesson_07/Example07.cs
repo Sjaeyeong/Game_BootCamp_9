@@ -278,6 +278,95 @@ static void ReverseWords (char[] output, int outputArraySize, char[] input)
 */
 #endregion
 
+#region 비트마스킹
+/*
+▶ 비트마스킹
+
+※ 많이 쓰나..? 안 쓰나..?
+ ㄴ 현업은 이거다.
+
+- 정수의 각 비트 (0 / 1)를 이용해서 여러 상태를 한번에 저장하고 검사하는 방법
+ ㄴ 하나의 숫자 안에 여러개의 ON/OFF 스위치를 넣는 방식
+
+EX :
+
+기준점 : 0000 0000
+
+- 0000 0001         →       대기
+- 0000 0010         →       이동
+- 0000 0100         →       공격
+- 0000 1000         →       스킬
+
+- 이렇게 각 상태가 서로 다른 비트를 가지만 하나의 변수로 여러 상태를 동시에 표현할 수 있다.
+
+EX :
+0000 0010
+0000 0100
+
+= 0000 0110
+
+
+▷ 왜 비트마스킹을 쓰는가?
+
+- 여러 상태를 하나의 값으로 관리할 수 있다.
+- bool 변수를 여러개 두는것보다 상태를 묶어서 관리하기가 좋다.
+- 상태 추가 / 제거 / 확인이 빠르며 규칙적으로 동작 시킬 수 있다.
+
+※ 뭔가를 구현하려고 할때 상태를 바꾼다 라는 개념이 중점이 된다면 비트마스킹은 좀 고민이 필요하다.
+ ㄴ 상태를 어떻게 관리하느냐에 중점
+
+
+
+EX :
+bool isMove;
+bool isAttack;
+bool isSkill;
+
+bool isMove;
+bool isAttack;
+bool isSkill;
+
+bool isMove;
+bool isAttack;
+bool isSkill;
+
+bool isMove;
+bool isAttack;
+bool isSkill;
+
+>> ECharacterState state; 여러묶음이 나와도 비트마스킹 하나로 가능(?)
+
+
+▶ 비트마스킹에서 자주 쓰는 연산
+
+1. 상태 추가
+
+- OR 연산자 (|)
+- 비트를 켜는 역할
+
+
+2. 상태 제거
+
+- AND + NOT 연산자 (& ~)
+- 특정 비트만 끄는 역할
+
+
+3. 상태 확인
+
+- AND 연산자 (&)
+- 해당 비트가 들어 있는지 검사
+
+
+- 위의 연산자들을 통해서 상태를 하나의 값으로 묶어 관리가 가능하다.
+ ㄴ 조헙면에서도 유리하다.
+
+
+
+
+ 
+*/
+#endregion
+
 namespace CS_9_Example.Lesson_07
 {
     internal class Example07
@@ -456,6 +545,404 @@ namespace CS_9_Example.Lesson_07
                 index++;
             }
 
+            Console.WriteLine();
+
+        }
+
+        // 0714 수업 시작
+        // 사용자 정의 자료형 → 구조체 / 열거형 / 튜플 /                →               클래스
+
+        // 열거형하면..
+        //  ㄴ 상수 / 단어 + 숫자 / 요일 / 아이템 등급 / 상태 / 상수 모음집 / 상수 /메뉴판 / 가독성 /
+        //     상수 집합 / 비트 플래그 / 간단한 데이터 묶음 / 비트 마스킹
+        // 열거형 정의 : 열거형 이름과 멤버 이름 작성
+        // 표기법 → E → 팀 규칙에 따라 생략되는 경우도 있음
+
+
+        enum EColorType
+        {
+            RED,                    // 열거형 멤버에 정수값을 지정하지 않을 경우 0부터
+            GREEN,                  // 1
+            BLUE = 1000,            // 1000 직접 할당 가능 (정수값)
+            BLACK,                  // 1001 정수값을 할당하지 않을 경우 이전 멤버 + 1값을 가진다
+            WHITE                   // 1002
+        }
+
+        // C# enum 기본적으로 대입에 안전하다.
+        //  ㄴ 타입에 안전하기 때문에 1. 자료형 범위를 지정할 수 있고 2. 접근 범위를 제한할 수 있다.
+        enum EMotionType : ushort // 메모리낭비를 방지하기 위해 자료형 범위를 지정
+        {
+            R_WALK,
+            L_WALK,
+            R_RUN,
+            L_RUN
+        }
+
+        enum MoveKey
+        {
+            UP,
+            DOWN,
+            LEFT,
+            RIGHT
+        }
+
+        enum GamePhase
+        {
+            TITLE,
+            LOBBY = 10,
+            INGAME,
+            BOSSBATTLE,
+            GAMEOVER
+        }
+
+        static void ExampleFunction_C()
+        {
+            Console.WriteLine("== Enum 예제 ==");
+            Console.WriteLine($"블랙 : {(int)EColorType.BLACK}");
+
+            // 열거형 변수
+            //  ㄴ 열거형의 기본 기반 타입은 int
+            //  ㄴ 기반 타입을 명시하면 크기는 달라질 수 있다.
+            EMotionType motion = EMotionType.L_WALK;
+
+            // 배열 → 반복문 (for문)
+            // 열거형 → 스위치
+
+            switch (motion)
+            {
+                case EMotionType.R_WALK:
+                    Console.WriteLine("오른쪽 걷기");
+                    break;
+                case EMotionType.L_WALK:
+                    Console.WriteLine("왼쪽 걷기");
+                    break;
+                case EMotionType.R_RUN:
+                    Console.WriteLine("오른쪽 걷기");
+                    break;
+                case EMotionType.L_RUN:
+                    Console.WriteLine("왼쪽 걷기");
+                    break;
+            }
+
+            if (motion == EMotionType.L_WALK)
+            {
+                motion = EMotionType.R_RUN;
+
+                if (motion == EMotionType.R_RUN)
+                {
+                    Console.WriteLine("오른쪽 뛰기");
+                }
+            }
+
+            Console.WriteLine();
+
+            // C# → 스위치 패턴 매칭 (스위치 기반 식문) → 열거형에서 사용할 수 있으나 굳이..?
+            //  ㄴ 꼭...회사 코드보면 누군가 쓰더라...
+
+            string motionText = motion switch
+            {
+                EMotionType.R_WALK => "오른쪽 걷기",
+                EMotionType.L_WALK => "왼쪽 걷기",
+                EMotionType.R_RUN => "오른쪽 뛰기",
+                EMotionType.L_RUN => "왼쪽 뛰기",
+                _=> "알수없는 동작"
+            };
+
+            Console.WriteLine(motionText);
+
+            motion = motion switch
+            {
+                EMotionType.R_WALK => EMotionType.R_RUN,
+                _ => motion
+            };
+
+            MoveKey key = MoveKey.UP;
+
+            //string motionText = motion switch
+            //{
+            //    EMotionType.R_WALK => "오른쪽 걷기",
+            //    EMotionType.L_WALK => "왼쪽 걷기",
+            //    EMotionType.R_RUN => "오른쪽 뛰기",
+            //    EMotionType.L_RUN => "왼쪽 뛰기",
+            //    _ => "알수없는 동작"
+            //};
+
+            switch (key)
+            {
+                case MoveKey.UP:
+                    Console.WriteLine("위쪽으로 이동");
+                    break;
+                case MoveKey.DOWN:
+                    //Console.WriteLine("위쪽으로 이동");
+                    break;
+                case MoveKey.LEFT:
+                    //Console.WriteLine("위쪽으로 이동");
+                    break;
+                case MoveKey.RIGHT:
+                    //Console.WriteLine("위쪽으로 이동");
+                    break;
+            }
+
+            // 코딩 규약 + 규칙을 어떻게 가져갈 것인가..? → 이후에 진행할 팀플에서는 팀원과 상의하여 정하고
+            //  ㄴ 취업 / 창업 / 출시 → 팀 규칙
+            // aa bb cc dd...
+            // int TestHP = 0;
+
+            GamePhase phase1 = GamePhase.INGAME;
+
+            // 1. 열거형 변수를 int로 형변환
+            // 현재 게임 상태를 숫자로 저장
+            Console.WriteLine("{0}의 정수값은 {1}", phase1, (int)phase1);
+
+            // 2. 정수에서 열거형 변수로 변환
+            GamePhase phase2 = (GamePhase)0;
+            Console.WriteLine(phase2);
+
+            // 3.
+            GamePhase phase3 = (GamePhase)5;
+            Console.WriteLine(phase3);          // 5가 출력됨
+                                                // ㄴ enum에 없는 값인데 통과.. → 상태 분기 로직 꼬임
+            Console.WriteLine();
+
+            // enum 범위 체크 패턴
+            //  ㄴ 받은 숫자가 실제 유효한 게임 상태인지 안전하게 확인 (서버)
+
+            // 숫자형태로 받은 게임 상태 값 → 서버 / 파일 / 패킷 / 세이브 데이터 등등
+            int valueFrontSever = 15;
+
+            // 이 숫자가 GamePhase에 실제 정의된 값이냐..?
+            // typeof : 타입 정보 요청 → enum
+            if (Enum.IsDefined(typeof(GamePhase), valueFrontSever))
+            {
+                // 검증 통과시 → 안전하게 변환
+                GamePhase phase = (GamePhase)valueFrontSever;
+                Console.WriteLine($"현재 상태 : {phase}");
+            }
+            else
+            {
+                // 버전 불일치 / 해킹 / 치트 / 파일 깨짐(세이브) / 개발자의 실수 등등..
+                Console.WriteLine("알수 없는 게임 상태 → 이후 추가 검증 필요");
+            }
+
+
+            if (Enum.IsDefined(typeof(GamePhase), valueFrontSever))
+            {
+                Console.WriteLine("잘못된 게임 상태 수신 → 타이틀 화면으로");
+                phase3 = GamePhase.TITLE;
+            }
+
+        }
+
+        static void PrintState(bool isIdle, bool isMove, bool isAttack, bool isSkill)
+        {
+            Console.WriteLine($"대기 : {isIdle}");
+            Console.WriteLine($"이동 : {isMove}");
+            Console.WriteLine($"공격 : {isAttack}");
+            Console.WriteLine($"스킬 : {isSkill}");
+            Console.WriteLine("=======");
+        }
+
+        static void ExampleFunction_BoolState()
+        {
+            Console.WriteLine("bool 상태 관리");
+
+            bool isIdle = true;
+            bool isMove = false;
+            bool isAttack = false;
+            bool isSkill = false;
+
+            // 처음 상태 : 대기
+            PrintState(isIdle, isMove, isAttack, isSkill);
+
+            // 이동 시작
+            isIdle = false;
+            isMove = true;
+            PrintState(isIdle, isMove, isAttack, isSkill);
+
+            // 이동하면서 공격
+            isAttack = true;
+            PrintState(isIdle, isMove, isAttack, isSkill);
+
+            // 이동 종료
+            isMove = false;
+            PrintState(isIdle, isMove, isAttack, isSkill);
+
+            // 공격 종료 → 스킬 시작
+            isAttack = false;
+            isSkill = true;
+            PrintState(isIdle, isMove, isAttack, isSkill);
+
+            // ※ 미래적으로 보면 당연히 매우 불리한 코드
+            //  ㄴ 미니 프로젝트전까지는 허용
+
+            /*
+            ● 위 코드에서 불편한 점
+
+            - 상태 종류가 많아질수록 관리할 변수가 늘어남 → 관리 문제 + 메모리 + 쓸데없이 줄이 길어진다.
+            - 매번 직접 수정도 해야 함
+            - 복합 상태가 되면 고통이다.
+             ㄴ 이동 + 공격 + 스킬 + 무적 + 기절 + 사망
+
+            ● 장점
+
+            - 직관적 → 그리고 편리함 (사람이)
+
+            */
+
+        }
+
+        // 열거형 비트 플래그
+        //  ㄴ enum 값을 비트 단위 상태값으로 사용 → 여러 상태를 동시에 저장 가능
+        //  ㄴ 비트 연산으로 처리하겠다.
+        [Flags]
+        enum ECharacterState
+        {
+            // Flags
+            // ㄴ enum값을 비트 플래그처럼 사용할 때 붙이는 속성
+            // ㄴ 여러값이 조합될 때 출력 결과를 더 보기 좋게 하기위해 일반적으로 비트 플래그를 사용하면 붙이다.
+            // Idle | Move
+            //  ㄴ 출력 : 0000_0001 | 0000_0010
+            //  ㄴ 출력 : Idle | Move
+
+            // 0b : 이진수
+            // 0x : 16진수
+
+            None = 0b_0000_0000,            // 0 : 상태 없음
+
+            Idle = 0b_0000_0001,            // 1 : 대기
+            Move = 0b_0000_0010,            // 2 : 이동
+            Attack = 0b_0000_0100,          // 4 : 이동
+            Skill = 0b_0000_1000,           // 8 : 스킬
+
+            CombatState = Attack | Skill    // 전투 상태 (상태를 묶은 조합값)
+        }
+
+        // n진법 
+        //enum WeaponOption
+        //{
+        //    None = 0,
+        //    Fire = 1 << 0,
+        //    Ice = 1 << 1,
+        //    Bleed = 1 << 2
+        //}
+
+        static void ExampleFunction_D()
+        {
+            // 비트마스킹 : 상태값 설계
+            // 비트마스킹 : 상태 조작 / 검사
+
+            // 여러 상태 조합 : OR → |
+
+            // 0000 0001 | 0000 0010 → 0000 0011
+            ECharacterState state = ECharacterState.Idle | ECharacterState.Move;
+            Console.WriteLine(state);
+
+            // 비트마스킹을 이용한 상태 추가
+            // 값 추가 OR + 대입 → |=
+            state |= ECharacterState.Attack;
+            Console.WriteLine(state);
+
+            // 비트마스킹을 이용한 상태 제거
+            //  ㄴ 값 제거 (AND + NOT : &= ~)
+            //  ㄴ 여기서는 이동 상태 제거
+            //  ㄴ AND 연산 → 해당 비트만 끄기
+
+            // Move 비트는 0000 0010 → ~Move → 1111 1101
+
+            state &= ~ECharacterState.Move;
+            Console.WriteLine(state);
+
+            // 비트 마스킹을 이용한 상태 확인
+            //  ㄴ 공격중..?
+            //  ㄴ 포함 여부 → AND → &
+            bool isAttacking = (state & ECharacterState.Attack) != ECharacterState.None;
+            Console.WriteLine(isAttacking);
+
+        }
+        
+        // 구조체 O / 열거형 O / 튜플 O
+        //  ㄴ 구조체는 많이 사용이 된다.
+        //  ㄴ 열거형은 적재적소에 사용된다. → 영항을 미치는 범위가 구조체보다 작다.
+        //  ㄴ 튜플 : 임시 데이터 + 잠깐 묶을 필요가 있을 때 → 구조체나 클래스를 만들기엔 너무 작은 경우
+        // 튜플 : 임시 데이터 묶음 / 함수 결과 여러개 반환 / 잠깐 묶어서 쓰는 데이터에 적합하다.
+        
+        static Random rand = new Random();
+
+        // 기본 공격력 + 치명타 확률을 받아 실제로 적용될 데미지와 치명타 여부 계산
+        //  ㄴ 함수 반환용 튜플 → 데미지 계산 결과 반환
+        //  ㄴ 데미지 계산 결과 여러 값으로 반환하기 위함
+
+        static (int damage, bool isCritical) CalculateDamage(int baseDamage, float critRate)
+        {
+            // NextDouble() : 0.0 이상 ~ 1.0 미만의 실수 반환
+            bool isCrit = rand.NextDouble() < critRate;
+
+            /*
+            랜덤값 : 0.25
+            치명타 확률 : 0.30
+
+            - 0.25 < 0.30 → 치명타 터졌다!
+            */
+
+            // 최종 데미지 계산 → 2배 아니면 기본
+            int finalDamage = isCrit ? baseDamage * 2 : baseDamage;
+
+            return (finalDamage, isCrit);
+        }
+
+        static void ExampleFunction_E()
+        {
+            Console.WriteLine("== 튜플 ==");
+
+            // 이름이 없는 튜플
+            (int, float) attackInfo = (50, 1.5f);
+
+            // Item1, Item2 ... 등으로 접근 가능
+            Console.WriteLine("공격력 : {0}, 배율 : {1}", attackInfo.Item1, attackInfo.Item2);
+
+            // 이름 없는 튜플은 빠르게 쓰기에는 좋다.
+            //  ㄴ 의미 자체가 잘 안보이기 때문에 실제로는 (협업시) 이름있는 튜플쪽으로 던져줘야 팀원이 편하다.
+
+            // 이름이 있는 튜플
+            //  ㄴ 이름 접근이 가능하기 때문에 보기에 편하다.
+            (int Damage, float CriticalRate) skillInfo = (120, 0.24f);
+            Console.WriteLine("스킬 데미지 : {0}, 치명타 확률 {1}", skillInfo.Damage, skillInfo.CriticalRate);
+
+            // 튜플 비교 (중요)
+            //  ㄴ 이름이 달라도 타입과 순서가 같으면 비교 가능
+            //  ㄴ 결국 튜플 이름은 가독성을 위한 별칭에 가깝고 → 실제 비교는 각 위치의 값 기준으로 이뤄진다.
+            (int hp, int mp) playerStatA = (100, 50);
+            (int health, int mana) playerStatB = (100, 50);
+
+            // T / F
+            Console.WriteLine(playerStatA == playerStatB);
+
+            // (int hp, int mp) playerStatA = (100, 50);
+            (int hp, int mp) playerStatC = (120, 50);
+
+            // F
+            Console.WriteLine(playerStatA == playerStatC);
+
+
+            // 함수 반환 튜플 받기
+            // 기본형태
+            (int damage, bool isCritical) result = CalculateDamage(50, 0.3f);
+            // var result = CalculateDamage(50, 0.3f);
+
+            Console.WriteLine($"데미지 : {result.damage}");
+            Console.WriteLine($"치명타 여부 : {result.isCritical}");
+
+            // 튜플 분해
+            //(int damage, bool isCritical) temp = CalculateDamage(50, 0.3f);
+            //
+            //int damage = temp.damage;
+            //bool isCritical = temp.isCritical;
+
+            // 자료형 자동변환
+            var (damage, isCritical) = CalculateDamage(50, 0.3f);
+
+            Console.WriteLine($"데미지 : {damage}");
+            Console.WriteLine($"치명타 여부 : {isCritical}");
         }
 
 
@@ -615,6 +1102,11 @@ namespace CS_9_Example.Lesson_07
 
             ExampleFunciton_A();
             ExampleFunciton_B();
+            ExampleFunction_C();
+            ExampleFunction_BoolState();
+            ExampleFunction_D();
+            ExampleFunction_E();
+
 #else
 
 #endif
