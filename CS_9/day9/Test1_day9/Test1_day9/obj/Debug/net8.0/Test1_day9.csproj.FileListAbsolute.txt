@@ -1,0 +1,15 @@
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\obj\Debug\net8.0\Test1_day9.GeneratedMSBuildEditorConfig.editorconfig
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\obj\Debug\net8.0\Test1_day9.AssemblyInfoInputs.cache
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\obj\Debug\net8.0\Test1_day9.AssemblyInfo.cs
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\obj\Debug\net8.0\Test1_day9.csproj.CoreCompileInputs.cache
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\obj\Debug\net8.0\Test1_day9.sourcelink.json
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\bin\Debug\net8.0\Test1_day9.exe
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\bin\Debug\net8.0\Test1_day9.deps.json
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\bin\Debug\net8.0\Test1_day9.runtimeconfig.json
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\bin\Debug\net8.0\Test1_day9.dll
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\bin\Debug\net8.0\Test1_day9.pdb
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\obj\Debug\net8.0\Test1_day9.dll
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\obj\Debug\net8.0\refint\Test1_day9.dll
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\obj\Debug\net8.0\Test1_day9.pdb
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\obj\Debug\net8.0\Test1_day9.genruntimeconfig.cache
+C:\Game_BootCamp_9\CS_9\day9\Test1_day9\Test1_day9\obj\Debug\net8.0\ref\Test1_day9.dll

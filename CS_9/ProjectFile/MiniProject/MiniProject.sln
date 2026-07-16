@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37411.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniProject", "MiniProject\MiniProject.csproj", "{87E3CEED-D2B4-4B86-9262-3887800FF196}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{C8D5274F-AC00-46C7-1F8D-E88E81087A52}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MainProject", "MainProject", "{FB34934F-C78B-416E-8DC8-03B695B7C080}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sprites", "Sprites", "{3FB4DD35-C9A0-470F-9A42-E5FEE973BBD4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IronClad_1", "IronClad_1\IronClad_1.csproj", "{0436F2F3-1946-457E-98DA-34C5C22D6CC0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87E3CEED-D2B4-4B86-9262-3887800FF196}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87E3CEED-D2B4-4B86-9262-3887800FF196}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87E3CEED-D2B4-4B86-9262-3887800FF196}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87E3CEED-D2B4-4B86-9262-3887800FF196}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0436F2F3-1946-457E-98DA-34C5C22D6CC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0436F2F3-1946-457E-98DA-34C5C22D6CC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0436F2F3-1946-457E-98DA-34C5C22D6CC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0436F2F3-1946-457E-98DA-34C5C22D6CC0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{87E3CEED-D2B4-4B86-9262-3887800FF196} = {FB34934F-C78B-416E-8DC8-03B695B7C080}
+		{FB34934F-C78B-416E-8DC8-03B695B7C080} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
+		{3FB4DD35-C9A0-470F-9A42-E5FEE973BBD4} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
+		{0436F2F3-1946-457E-98DA-34C5C22D6CC0} = {3FB4DD35-C9A0-470F-9A42-E5FEE973BBD4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97C7F5B0-C5F8-4479-A91E-0F9702812A94}
+	EndGlobalSection
+EndGlobal

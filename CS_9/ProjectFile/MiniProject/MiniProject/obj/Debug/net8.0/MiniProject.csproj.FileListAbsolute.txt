@@ -1,0 +1,15 @@
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\bin\Debug\net8.0\MiniProject.exe
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\bin\Debug\net8.0\MiniProject.deps.json
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\bin\Debug\net8.0\MiniProject.runtimeconfig.json
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\bin\Debug\net8.0\MiniProject.dll
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\bin\Debug\net8.0\MiniProject.pdb
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\obj\Debug\net8.0\MiniProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\obj\Debug\net8.0\MiniProject.AssemblyInfoInputs.cache
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\obj\Debug\net8.0\MiniProject.AssemblyInfo.cs
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\obj\Debug\net8.0\MiniProject.csproj.CoreCompileInputs.cache
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\obj\Debug\net8.0\MiniProject.sourcelink.json
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\obj\Debug\net8.0\MiniProject.dll
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\obj\Debug\net8.0\refint\MiniProject.dll
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\obj\Debug\net8.0\MiniProject.pdb
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\obj\Debug\net8.0\MiniProject.genruntimeconfig.cache
+C:\Game_BootCamp_9\CS_9\ProjectFile\MiniProject\MiniProject\obj\Debug\net8.0\ref\MiniProject.dll
