@@ -69,10 +69,26 @@ namespace Test1_day9
                 }
             }
 
-            public void PrintInfo()             // 임시 출력 메서드
+            public ConsoleColor GetCardColor()
             {
-                Console.Write($"{CardNumToString()}, ");
-                Console.WriteLine($"{GetCardType()}");
+                switch (_type)
+                {
+                    case CardType.Diamond:
+                    case CardType.Heart:
+                        return ConsoleColor.Red;
+                    case CardType.Spade:
+                    case CardType.Clover:
+                    default:
+                        return ConsoleColor.Black;
+                }
+            }
+
+            public void PrintInfo()
+            {
+                ConsoleColor cardColor = GetCardColor();
+                TextColor($"{GetCardType()}", cardColor, ConsoleColor.White);
+                Console.WriteLine($" {CardNumToString()}");
+                Console.WriteLine();
             }
         }
 
@@ -140,15 +156,43 @@ namespace Test1_day9
 
         static void GamePlay(CardInfo[] deck)
         {
-            for (int i = 0; i < 5; i++)
+            int i = 0;
+            for (i = 0; i < 5; i++)
             {
                 deck[i].PrintInfo();
             }
+
+            deck[i].PrintInfo();
+            Console.WriteLine(i);
         }
 
-        static void TextColor()
-        {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        static void TextColor(string text, ConsoleColor textColor, ConsoleColor backColor)
+        {
+            ConsoleColor prevTextColor = Console.ForegroundColor;
+            ConsoleColor prevBackColor = Console.BackgroundColor;
+
+            Console.ForegroundColor = textColor;
+            Console.BackgroundColor = backColor;
+            Console.Write(text);
+
+            Console.ForegroundColor = prevTextColor;
+            Console.BackgroundColor = prevBackColor;
         }
     }
 }
