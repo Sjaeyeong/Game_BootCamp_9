@@ -1,0 +1,15 @@
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\bin\Debug\net8.0\PromotionTest2.exe
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\bin\Debug\net8.0\PromotionTest2.deps.json
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\bin\Debug\net8.0\PromotionTest2.runtimeconfig.json
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\bin\Debug\net8.0\PromotionTest2.dll
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\bin\Debug\net8.0\PromotionTest2.pdb
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\obj\Debug\net8.0\PromotionTest2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\obj\Debug\net8.0\PromotionTest2.AssemblyInfoInputs.cache
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\obj\Debug\net8.0\PromotionTest2.AssemblyInfo.cs
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\obj\Debug\net8.0\PromotionTest2.csproj.CoreCompileInputs.cache
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\obj\Debug\net8.0\PromotionTest2.sourcelink.json
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\obj\Debug\net8.0\PromotionTest2.dll
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\obj\Debug\net8.0\refint\PromotionTest2.dll
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\obj\Debug\net8.0\PromotionTest2.pdb
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\obj\Debug\net8.0\PromotionTest2.genruntimeconfig.cache
+C:\Game_BootCamp_9\CS_9\day9\PromotionTest2\PromotionTest2\obj\Debug\net8.0\ref\PromotionTest2.dll

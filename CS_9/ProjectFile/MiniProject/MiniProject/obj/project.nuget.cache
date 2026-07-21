@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "zSUfB6kzk3k=",
+  "dgSpecHash": "XwJeI5ejMyQ=",
   "success": true,
   "projectFilePath": "C:\\Game_BootCamp_9\\CS_9\\ProjectFile\\MiniProject\\MiniProject\\MiniProject.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\석재영\\.nuget\\packages\\microsoft.win32.systemevents\\10.0.10\\microsoft.win32.systemevents.10.0.10.nupkg.sha512",
+    "C:\\Users\\석재영\\.nuget\\packages\\system.drawing.common\\10.0.10\\system.drawing.common.10.0.10.nupkg.sha512",
     "C:\\Users\\석재영\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
     "C:\\Users\\석재영\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
     "C:\\Users\\석재영\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512",

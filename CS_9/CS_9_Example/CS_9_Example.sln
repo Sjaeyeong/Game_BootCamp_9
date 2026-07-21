@@ -19,6 +19,49 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08. 클래스", "08. 클래
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_9_Example.Lesson._08._클래스", "CS_9_Example.Lesson._08._클래스\CS_9_Example.Lesson._08._클래스.csproj", "{ABFFCD1C-826D-489A-B69E-89FC7DA6F235}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09. 프로퍼티", "09. 프로퍼티", "{7BF7CA04-5CD6-4675-9B70-B7457DFFC909}"
+	ProjectSection(SolutionItems) = preProject
+		CS_9_Example.Lesson._09.프로퍼티\Example09.cs = CS_9_Example.Lesson._09.프로퍼티\Example09.cs
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_9_Example.Lesson._09.프로퍼티", "CS_9_Example.Lesson._09.프로퍼티\CS_9_Example.Lesson._09.프로퍼티.csproj", "{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "유틸리티", "유틸리티", "{60434A62-7646-4045-A6C6-42D566ECB6F0}"
+	ProjectSection(SolutionItems) = preProject
+		ConsolePrint.cs = ConsolePrint.cs
+		GlobalUsing.cs = GlobalUsing.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. 객체지향 프로그래밍", "10. 객체지향 프로그래밍", "{444E95DA-AD5D-4953-9274-ACA6FD02C2B2}"
+	ProjectSection(SolutionItems) = preProject
+		Example10.cs = Example10.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A. 캡슐화", "A. 캡슐화", "{366EE7E3-48D2-4DFC-BF6C-F72FF230B4F3}"
+	ProjectSection(SolutionItems) = preProject
+		Example10_A.cs = Example10_A.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "B. 상속", "B. 상속", "{81DAE15F-0983-4D32-87F2-7E304C224096}"
+	ProjectSection(SolutionItems) = preProject
+		Example10_B.cs = Example10_B.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C. 다향성", "C. 다향성", "{0711E246-A0CC-468D-8A42-6E67782C0AE3}"
+	ProjectSection(SolutionItems) = preProject
+		Example10_C.cs = Example10_C.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D. 추상화", "D. 추상화", "{587676A1-A7A4-4B1C-B3C8-6F5667D622EB}"
+	ProjectSection(SolutionItems) = preProject
+		Example10_D.cs = Example10_D.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "E 이름공간", "E 이름공간", "{D612A1B1-5C3C-4E35-A313-61F1D49799F4}"
+	ProjectSection(SolutionItems) = preProject
+		Example10_E.cs = Example10_E.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +84,10 @@ Global
 		{ABFFCD1C-826D-489A-B69E-89FC7DA6F235}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABFFCD1C-826D-489A-B69E-89FC7DA6F235}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABFFCD1C-826D-489A-B69E-89FC7DA6F235}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +97,13 @@ Global
 		{5CC9CB20-AFB5-491B-9BC7-6227866F29C4} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
 		{A3A054D2-C4BC-4EFF-8955-77C9EABB0E83} = {78CBE78F-C5DE-4A6D-AC1B-638934D5B375}
 		{ABFFCD1C-826D-489A-B69E-89FC7DA6F235} = {97CBDDE6-D909-407D-9366-D17E7BB2E48C}
+		{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7} = {97CBDDE6-D909-407D-9366-D17E7BB2E48C}
+		{60434A62-7646-4045-A6C6-42D566ECB6F0} = {97CBDDE6-D909-407D-9366-D17E7BB2E48C}
+		{366EE7E3-48D2-4DFC-BF6C-F72FF230B4F3} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
+		{81DAE15F-0983-4D32-87F2-7E304C224096} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
+		{0711E246-A0CC-468D-8A42-6E67782C0AE3} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
+		{587676A1-A7A4-4B1C-B3C8-6F5667D622EB} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
+		{D612A1B1-5C3C-4E35-A313-61F1D49799F4} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B3A0CA2-B317-4D5C-9C7A-6961B48F248D}

@@ -1,0 +1,5 @@
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson._09.프로퍼티\obj\Debug\net8.0\CS_9_Example.Lesson._09.프로퍼티.GeneratedMSBuildEditorConfig.editorconfig
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson._09.프로퍼티\obj\Debug\net8.0\CS_9_Example.Lesson._09.프로퍼티.AssemblyInfoInputs.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson._09.프로퍼티\obj\Debug\net8.0\CS_9_Example.Lesson._09.프로퍼티.AssemblyInfo.cs
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson._09.프로퍼티\obj\Debug\net8.0\CS_9_Example.Lesson._09.프로퍼티.csproj.CoreCompileInputs.cache
+C:\Game_BootCamp_9\CS_9\CS_9_Example\CS_9_Example.Lesson._09.프로퍼티\obj\Debug\net8.0\CS_9_Example.Lesson._09.프로퍼티.sourcelink.json
