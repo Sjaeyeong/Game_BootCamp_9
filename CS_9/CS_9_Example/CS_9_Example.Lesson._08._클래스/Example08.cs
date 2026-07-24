@@ -144,7 +144,7 @@ namespace CS_9_Example.Lesson._08._클래스
         }
 
         // 플레이어마다 이름, 위치, 능력치가 다를 수 있다.
-        class Player
+        class Player // : IDisposable
         {
             // 일반적으로 외부 접근을 제한하는 방식으로 설계하는게 일반적
             // 객체의 상태 변경을 public 통해 제어하며 이를 통해 객체의 안정성 + 일관성을 유지할 수 있다.
@@ -190,6 +190,17 @@ namespace CS_9_Example.Lesson._08._클래스
                 _stat.hp = hp;
                 _stat.mp = mp;
             }
+
+            //public void Dispose()
+            //{
+            //    Dispose(true);
+            //    GS.SuppressFinalize(this);
+            //}
+
+            //protected virtual void Dispose(bool Disposing)
+            //{
+            //    // 하고 싶은 코드를 처리한다...
+            //}
 
             // C# 주의
             // 소멸자 :
@@ -371,6 +382,13 @@ namespace CS_9_Example.Lesson._08._클래스
         {
             ExampleFunction_ClassicBasic();
 
+            //using (Player player = new Player())
+            //{
+            //    // 여기서 흐름 잡는다.
+
+            //    player.Dispose();
+
+            //}
         }
     }
 }

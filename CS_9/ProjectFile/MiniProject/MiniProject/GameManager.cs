@@ -6,201 +6,122 @@ using System.Threading.Tasks;
 
 namespace MiniProject
 {
-    internal class GameManager
+    public class GameManager
     {
+        public int _round;
+
         private Player _player;
-        private Monster _monster;
-        public int round = 1;
-        private GameState _state;
+        private CardSelector _selector;
+        private Monster[] _monster;
+        private Monster _boss;
+        private Monster? _currentActiveMonster;  // 현재 싸우고 있는 몬스터가 누구인가
+        private GameState _gameState;
+        private StatType _statType;
         private int _frameCount;
+        private PngDecoder _decoder;
 
-        private static Random rand = new Random();
+        private Random rand = new Random();
 
-        public void Play()
+        public GameManager()                // 게임 초기상태 설정
         {
-            while (_state != GameState.GameOver)        // 0.5초마다 화면 변경
+            _round = 1;
+            _decoder = new PngDecoder();
+            _player = new Player("슬라임 슬레이어");
+            _selector = new CardSelector();
+            _monster = Monster.MonsterGroup(_round, _decoder);
+            _boss = Monster.BossMonster(_round, _decoder);
+            _gameState = GameState.Playing;     // 추후에 메인메뉴 만들면 메인메뉴로?
+            _frameCount = 0;
+
+            SpawnMonster();
+        }
+
+        public void Play()                              // GameOver가 될때까지 반복, Playing상태이면 UpdateFrame(), LeveUP시에는 게임 중단되고 레벨업 선택창이 나옴 
+        {
+            while (_gameState != GameState.GameOver)        // 0.5초마다 화면 변경
             {
-
-
-
-
-
-
-                Thread.Sleep(500);
-            }
-
-        }
-
-        public void LevelUpSelectPlzzzz()                   // 레벨업시 선택지 출력
-        {
-
-        }
-
-        public void GameEnd()                   // 플레이어의 체력이 0보다 작아지면 게임 종료
-        {
-
-        }
-
-        #region 4일차 과제활용 부분 (렙업시 선택창 뜨는 로직)
-
-        static void ConsoleLine()
-        {
-            Console.WriteLine("=====================================================================================");
-        }
-        static void SelectEffect(string[] powerUp)
-        {
-            Shuffle(powerUp); // 7월 10일 강의때 배운 셔플을 활용해 서로 다른 무작위 스탯 생성
-
-            string power1 = powerUp[0];
-            string power2 = powerUp[1];
-            string power3 = powerUp[2];
-
-            string stat1 = StatRandom();
-            string stat2 = StatRandom();
-            string stat3 = StatRandom();
-
-            string[] box1 = SelectBox(power1, stat1);
-            string[] box2 = SelectBox(power2, stat2);
-            string[] box3 = SelectBox(power3, stat3);
-
-            ConsoleColor color1 = GetStatColor(power1);
-            ConsoleColor color2 = GetStatColor(power2);
-            ConsoleColor color3 = GetStatColor(power3);
-
-            BoxColor(box1, box2, box3, color1, color2, color3);
-
-            while (true)
-            {
-                ConsoleKeyInfo keyInfo = Console.ReadKey(true); // ReadKey()안에 true를 넣으면 콘솔창에 넘패드를 누른 숫자가 나타나지 않는다고 함!
-
-                switch (keyInfo.Key)
+                if (_gameState == GameState.Playing)
                 {
-                    case ConsoleKey.NumPad1:
-                        Console.Clear();
-                        ConsoleLine();
-                        Console.WriteLine("1번을 선택했습니다!".PadLeft(45));
-                        ConsoleLine();
-                        BoxColor(box1, box2, box3, color1, GetStatColor(""), GetStatColor(""));
-                        break;
-                    case ConsoleKey.NumPad2:
-                        Console.Clear();
-                        ConsoleLine();
-                        Console.WriteLine("2번을 선택했습니다!".PadLeft(45));
-                        ConsoleLine();
-                        BoxColor(box1, box2, box3, GetStatColor(""), color2, GetStatColor(""));
-                        break;
-                    case ConsoleKey.NumPad3:
-                        Console.Clear();
-                        ConsoleLine();
-                        Console.WriteLine("3번을 선택했습니다!".PadLeft(45));
-                        ConsoleLine();
-                        BoxColor(box1, box2, box3, GetStatColor(""), GetStatColor(""), color3);
-                        break;
-                    default:
-                        continue;
+                    SpawnMonster();
+                    UpdateFrame();
                 }
 
-                break;
+                if (_gameState == GameState.LevelUp)
+                {
+                    LevelUpSelect();
+                }
+
+                Thread.Sleep(500);
+                _frameCount++;
             }
 
         }
-
-        static string[] SelectBox(string statName, string statValue)            // 레벨업시 뜨는 선택장
+        public void UpdateFrame()           // 프레임마다 : 공속게이지 1칸씩 채워짐, 다 채워지면 공격, 프레임마다 이미지 변경됨, 죽었는지 확인하기?
         {
-            string[] lines = new string[12];
+            _player.UpdateGauage();
+            _currentActiveMonster.UpdateGauage();
 
-            string paddedName = statName.PadLeft(8).PadRight(12);
-            string paddedValue = $"+ {statValue}".PadLeft(8).PadRight(13);
-
-            lines[0] = "┌───────────────────┐";
-            lines[1] = "│                   │";
-            lines[2] = "│                   │";
-            lines[3] = "│                   │";
-            lines[4] = $"│   {paddedName}    │";
-            lines[5] = "│                   │";
-            lines[6] = "│                   │";
-            lines[7] = $"│   {paddedValue}   │";
-            lines[8] = "│                   │";
-            lines[9] = "│                   │";
-            lines[10] = "│                   │";
-            lines[11] = "└───────────────────┘";
-
-            return lines;
-        }
-
-        static ConsoleColor GetStatColor(string statName)
-        {
-            switch (statName)
+            if (_player._canAttack)
             {
-                case "ATK":
-                    return ConsoleColor.DarkRed;
-                case "DEF":
-                    return ConsoleColor.DarkGreen;
-                case "H P":
-                    return ConsoleColor.Red;
-                case "A S":
-                    return ConsoleColor.Yellow;
-                case "SPD":
-                    return ConsoleColor.Cyan;
-                default:
-                    return ConsoleColor.White;
+                int playerDmg = _player.Attack(_currentActiveMonster);
+                _currentActiveMonster.Hit(playerDmg);
             }
-        }
-
-        static string StatRandom() // 출력할때 PadLeft와 PadRight를 사용하기 위해 미리 string으로 반환
-        {
-            int statNum = rand.Next(10, 31);
-
-            return statNum.ToString();
-        }
-
-        static void Shuffle(string[] array)
-        {
-            for (int i = array.Length - 1; i > 0; i--)
+            if (_currentActiveMonster._canAttack)
             {
-
-                int j = rand.Next(0, i + 1);
-
-                string temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                int monsterDmg = _currentActiveMonster.Attack(_player);
+                _player.Hit(monsterDmg);
             }
+            CheckState();
         }
 
-        static void PrintTextColor(string text, ConsoleColor fontColor)
+        public void SpawnMonster()
         {
-            ConsoleColor oldFont = Console.ForegroundColor;
+            int monsterRandom = rand.Next(0, _monster.Length);
 
-            Console.ForegroundColor = fontColor;
-
-            Console.Write(text);
-
-            Console.ForegroundColor = oldFont;
-
-        }
-
-        static void BoxColor(string[] box1, string[] box2, string[] box3, ConsoleColor color1, ConsoleColor color2, ConsoleColor color3)
-        {
-            for (int i = 0; i < 12; i++)
+            if (_currentActiveMonster != null && _currentActiveMonster._isAlive)      // 살아있다면 스킵
             {
-                PrintTextColor(box1[i], color1);
-                Console.Write("   ");
+                return;
+            }
 
-                PrintTextColor(box2[i], color2);
-                Console.Write("   ");
-
-                PrintTextColor(box3[i], color3);
-
-                Console.WriteLine();
+            // 몬스터 스폰 시키는 메서드
+            if (_round % 5 == 0)            // 5라운드마다 보스가 소환
+            {
+                _currentActiveMonster = _boss;
+            }
+            else
+            {
+                _currentActiveMonster = _monster[monsterRandom];
             }
         }
 
-        #endregion
+        public void CheckState()    // Unit들이 죽었는지 확인 / Player가 죽으면 게임종료, 몬스터가 죽으면 다음 몬스터 소환
+        {
+            if (!_player._isAlive)
+            {
+                _gameState = GameState.GameOver;
+                return;
+            }
+
+            if (!_currentActiveMonster._isAlive)
+            {
+                _round++;
+                _player.AddKill();
+                _gameState = GameState.LevelUp;
+                return;
+            }
+
+            
+        }
+
+        public void LevelUpSelect()                   // 레벨업시 선택지 출력
+        {
+            int statValue;
+            _selector.SelectEffect(_player, out _statType, out statValue);
+            _player.UpdateStats(_statType, statValue);
+            _gameState = GameState.Playing;
+        }
 
     }
-
-
-
 
 }
 

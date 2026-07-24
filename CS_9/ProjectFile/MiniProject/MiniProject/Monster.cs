@@ -1,70 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using static System.MathF;
 
 namespace MiniProject
 {
-    internal class Monster : Unit
+    public class Monster : Unit
     {
-        public bool _isBoss { get; set; }
-
-
-        public Monster(string name, int maxHp, int attackPower, int attackSpeed, int maxGauge, int defense, bool isBoss)
+        public Monster(string name, int maxHp, int attackPower, int attackSpeed, int maxGauge, int defense)
             : base(name, maxHp, attackPower, attackSpeed, maxGauge, defense)
         {
-            _isBoss = isBoss;
+            _isAlive = true;
         }
 
-        public Monster NormalMonster(int round)     // 일반몹 수치 조정 필요
+        static public Monster[] MonsterGroup(int round, PngDecoder decoder)     // 07/21 강의때 배운 static 활용
         {
-            Random random = new Random();
-            int monsterType = random.Next(0, 3);    // 3가지의 랜덤 몬스터 소환
-
-            string name = "";
+            Monster[] monsters = new Monster[3];
             int maxHp = 8 + (round * 2);
-            int attackPower = 1 + (round%2 * 2);
+            int attackPower = 1 + ((round / 2) * 2);
             int defense = 1 + round;
-            int maxGauge = 4;
 
-            switch (monsterType)
-            {
-                case 0:
-                    name = "슬라임";
-                    maxHp += 4;
-                    maxGauge = 2;
-                    break;
-                case 1:
-                    name = "골렘";
-                    maxHp = (int)(maxHp * 1.5);
-                    maxGauge = 3;
-                    attackPower += 4;
-                    defense += 4;
-                    break;
-                case 2:
-                    name = "고블린";
-                    maxGauge = 1;
-                    defense += 1;
-                    break;
-            }
+            monsters[0] = new Monster("일반 슬라임", maxHp, attackPower, 4, 1, defense);  // 공격속도가 빠름
+            monsters[1] = new Monster("행복한 슬라임", maxHp + 5, attackPower, 1, 4, defense); // 체력 +5, 공격속도가 느림
+            monsters[2] = new Monster("화난 슬라임", maxHp - 2, (int)(attackPower * 1.2f), 2, 3, defense);    // 체력이 -2, 공격력이 1.2배, 공격속도는 2 (게이지3)
 
-            return new Monster(name, maxHp, attackPower, 1, maxGauge, defense, false);
+            return monsters;
         }
 
-        public Monster BossMonster(int round)   // 보스 수치 조정필요
+        static public Monster BossMonster(int round, PngDecoder decoder)
         {
-            string name = "";
-            int maxHp = 8 + (round * 2);
-            int attackPower = 1 + (round % 2 * 2);
-            int defense = 1 + round;
-            int maxGauge = 4;
+            int maxHp = 25 + (round * 2);
+            int attackPower = 10 + (round * 2);
+            int defense = 5 + (round * 2);
 
-            return new Monster(name, maxHp, attackPower, 1, maxGauge, defense, true);
+            Monster boss = new Monster("킹 슬라임", maxHp, attackPower, 2, 3, defense);
+            return boss;
         }
-
-
 
     }
 }

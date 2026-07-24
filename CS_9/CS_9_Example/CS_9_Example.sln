@@ -21,7 +21,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_9_Example.Lesson._08._�
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09. 프로퍼티", "09. 프로퍼티", "{7BF7CA04-5CD6-4675-9B70-B7457DFFC909}"
 	ProjectSection(SolutionItems) = preProject
+		ConsolePrint.cs = ConsolePrint.cs
 		CS_9_Example.Lesson._09.프로퍼티\Example09.cs = CS_9_Example.Lesson._09.프로퍼티\Example09.cs
+		GlobalUsing.cs = GlobalUsing.cs
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_9_Example.Lesson._09.프로퍼티", "CS_9_Example.Lesson._09.프로퍼티\CS_9_Example.Lesson._09.프로퍼티.csproj", "{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7}"
@@ -37,30 +39,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. 객체지향 프로그�
 		Example10.cs = Example10.cs
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A. 캡슐화", "A. 캡슐화", "{366EE7E3-48D2-4DFC-BF6C-F72FF230B4F3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.", "02.", "{4270F18D-D616-413E-8A43-AA67FA8318D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.", "03.", "{D4994D72-3E5A-4C73-9E3B-1799F2C72A2B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.", "04.", "{5848AF90-006E-E38B-7F64-F99DF9244BC9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.", "05.", "{5AEDC995-9A84-D21E-A776-162FF4653AEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "OOP\OOP.csproj", "{0CE44065-DC9D-4E45-B08E-A591B2B2C642}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11. 인터페이스", "11. 인터페이스", "{2F7FCDEA-76CC-41A4-8563-206595AEA49C}"
 	ProjectSection(SolutionItems) = preProject
-		Example10_A.cs = Example10_A.cs
+		OOP\ConsolePrint.cs = OOP\ConsolePrint.cs
+		OOP\GlobalUsing.cs = OOP\GlobalUsing.cs
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "B. 상속", "B. 상속", "{81DAE15F-0983-4D32-87F2-7E304C224096}"
-	ProjectSection(SolutionItems) = preProject
-		Example10_B.cs = Example10_B.cs
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_9_Example.Lesson._11._인터페이스", "CS_9_Example.Lesson._11._인터페이스\CS_9_Example.Lesson._11._인터페이스.csproj", "{C8091FAF-5EB1-414C-ADFB-D78B2A016339}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C. 다향성", "C. 다향성", "{0711E246-A0CC-468D-8A42-6E67782C0AE3}"
-	ProjectSection(SolutionItems) = preProject
-		Example10_C.cs = Example10_C.cs
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "12. 사운드", "12. 사운드", "{483323E2-9EE0-4DDB-B4B7-DBFD6A0BBA55}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D. 추상화", "D. 추상화", "{587676A1-A7A4-4B1C-B3C8-6F5667D622EB}"
-	ProjectSection(SolutionItems) = preProject
-		Example10_D.cs = Example10_D.cs
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "E 이름공간", "E 이름공간", "{D612A1B1-5C3C-4E35-A313-61F1D49799F4}"
-	ProjectSection(SolutionItems) = preProject
-		Example10_E.cs = Example10_E.cs
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CS_9_Example.Lesson._12._사운드", "CS_9_Example.Lesson._12._사운드\CS_9_Example.Lesson._12._사운드.csproj", "{A950F42F-AA5D-4FF5-A0E8-26C4FE4D1FBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,6 +87,18 @@ Global
 		{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE44065-DC9D-4E45-B08E-A591B2B2C642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE44065-DC9D-4E45-B08E-A591B2B2C642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE44065-DC9D-4E45-B08E-A591B2B2C642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE44065-DC9D-4E45-B08E-A591B2B2C642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8091FAF-5EB1-414C-ADFB-D78B2A016339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8091FAF-5EB1-414C-ADFB-D78B2A016339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8091FAF-5EB1-414C-ADFB-D78B2A016339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8091FAF-5EB1-414C-ADFB-D78B2A016339}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A950F42F-AA5D-4FF5-A0E8-26C4FE4D1FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A950F42F-AA5D-4FF5-A0E8-26C4FE4D1FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A950F42F-AA5D-4FF5-A0E8-26C4FE4D1FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A950F42F-AA5D-4FF5-A0E8-26C4FE4D1FBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,13 +108,11 @@ Global
 		{5CC9CB20-AFB5-491B-9BC7-6227866F29C4} = {C8D5274F-AC00-46C7-1F8D-E88E81087A52}
 		{A3A054D2-C4BC-4EFF-8955-77C9EABB0E83} = {78CBE78F-C5DE-4A6D-AC1B-638934D5B375}
 		{ABFFCD1C-826D-489A-B69E-89FC7DA6F235} = {97CBDDE6-D909-407D-9366-D17E7BB2E48C}
-		{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7} = {97CBDDE6-D909-407D-9366-D17E7BB2E48C}
+		{BD57A291-DCC8-409A-81D1-1DEA19A8B9A7} = {7BF7CA04-5CD6-4675-9B70-B7457DFFC909}
 		{60434A62-7646-4045-A6C6-42D566ECB6F0} = {97CBDDE6-D909-407D-9366-D17E7BB2E48C}
-		{366EE7E3-48D2-4DFC-BF6C-F72FF230B4F3} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
-		{81DAE15F-0983-4D32-87F2-7E304C224096} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
-		{0711E246-A0CC-468D-8A42-6E67782C0AE3} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
-		{587676A1-A7A4-4B1C-B3C8-6F5667D622EB} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
-		{D612A1B1-5C3C-4E35-A313-61F1D49799F4} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
+		{0CE44065-DC9D-4E45-B08E-A591B2B2C642} = {444E95DA-AD5D-4953-9274-ACA6FD02C2B2}
+		{C8091FAF-5EB1-414C-ADFB-D78B2A016339} = {2F7FCDEA-76CC-41A4-8563-206595AEA49C}
+		{A950F42F-AA5D-4FF5-A0E8-26C4FE4D1FBD} = {483323E2-9EE0-4DDB-B4B7-DBFD6A0BBA55}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B3A0CA2-B317-4D5C-9C7A-6961B48F248D}
