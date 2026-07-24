@@ -1,2 +1,5 @@
 .vs/
 *.ipch
+
+# Exclude sound assets from C# Console Mini Project
+**/Sound/
